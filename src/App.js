@@ -10,8 +10,11 @@ function App() {
   var colorsPallete;
 
   function createRandomPalette(){
-    const firstColor = Math.floor(Math.random()*16777215);
-    const lastColor = Math.floor(Math.random()*16777215);
+    let firstColor = Math.floor(Math.random()*16777215);
+    let lastColor = Math.floor(Math.random()*16777215);
+    while(chroma.contrast(firstColor, lastColor)<4){
+      lastColor = Math.floor(Math.random()*16777215);
+    }
     colorsPallete = chroma.scale([firstColor, lastColor]).mode('lch').colors(steps);
     updateURL();
   }

@@ -5,9 +5,7 @@ class ColorBlock extends Component {
     const color = this.props.color.toUpperCase() || "black"
     return (
       <div className="colorblock" style={{backgroundColor: color}}>
-        <p className="colorname">
-          {color}
-        </p>
+        <p className="colorname">{color}</p>
       </div>
     );
   }
