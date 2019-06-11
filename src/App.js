@@ -26,7 +26,7 @@ function App() {
 
   // refresh page using spacebar key
   document.body.onkeyup = function(e){
-    if(e.keyCode == 32){
+    if(e.keyCode === 32){
       window.location.hash = "";
       window.location.reload();
     }
