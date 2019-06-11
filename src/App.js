@@ -1,6 +1,7 @@
 import React from 'react';
 import ColorPalette from "./components/ColorPalette";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
       <Header/>
       <ColorPalette/>
+      <Footer/>
     </div>
   );
 }
