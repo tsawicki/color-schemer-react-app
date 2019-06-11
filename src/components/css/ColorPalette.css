@@ -1,0 +1,12 @@
+.colorPalette {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+}
+
+@media (max-width: 767px){
+  .colorPalette {
+    flex-direction: column;
+  } 
+}

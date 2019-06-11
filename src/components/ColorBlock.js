@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './css/ColorBlock.css';
 
 class ColorBlock extends Component {
   render() {

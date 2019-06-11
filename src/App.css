@@ -1,55 +1,5 @@
-.colorBlocksWrapper {
-  height: calc(100vh - 60px);
-  width: 100%;
+.App{
+  height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-}
-
-.optionsPanel{
-  width: 100%;
-  height: 60px;
-  background: #fff;
-  /*text-transform: uppercase;*/
-}
-
-.colorblock{
-  flex: auto;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;  
-}
-
-.colorblock .colorname{
-  background: rgba(0,0,0,0.4);
-  color: #fff;
-  padding: 8px 10px;
-  border-radius: 5px;
-  font-size: 12px;
-}
-
-@media (max-width: 767px){
-  .colorBlocksWrapper {
   flex-direction: column;
-  } 
-  .colorblock{
-    align-items: center;
-  }
-}
-
-.item-enter {
-  opacity: 0;
-  transform: scale(0.9);
-}
-.item-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 300ms, transform 300ms;
-}
-.item-exit {
-  opacity: 1;
-}
-.item-exit-active {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 300ms, transform 300ms;
 }

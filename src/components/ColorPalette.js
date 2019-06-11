@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import chroma from 'chroma-js';
 import ColorBlock from "./ColorBlock";
+import './css/ColorPalette.css';
 
 class ColorPalette extends Component {
 
@@ -40,7 +41,7 @@ class ColorPalette extends Component {
   render() {
     if(this.state.colorsPallete){
       return (
-        <div className="colorBlocksWrapper">
+        <div className="colorPalette">
           {this.state.colorsPallete.map((colorBlock, index) => {
             return (
                <ColorBlock color={colorBlock} key={index}></ColorBlock>
