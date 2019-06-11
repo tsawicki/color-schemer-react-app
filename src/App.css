@@ -1,33 +1,55 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.colorBlocksWrapper {
+  height: calc(100vh - 60px);
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+}
+
+.optionsPanel{
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  text-transform: uppercase;
+}
+
+.colorblock{
+  flex: auto;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-end;  
 }
 
-.App-link {
-  color: #61dafb;
+.colorblock .colorname{
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 12px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 767px){
+  .colorBlocksWrapper {
+  flex-direction: column;
+  } 
+  .colorblock{
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.item-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.item-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
 }
