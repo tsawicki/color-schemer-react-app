@@ -10,17 +10,13 @@ class ColorSchemer extends Component {
     super(...props);
     document.body.onkeyup = (e) => {
       if(e.keyCode === 32){
-        this.refreshWindow();
+        window.location.hash = "";
+        window.location.reload();
       }
     }   
     const colorsNumber = localStorage.getItem("colorsNumber") || 5
     this.state = {colorsNumber: colorsNumber};
     // localStorage.setItem("colorsNumber", JSON.stringify(this.state.colorsNumber));
-  }
-
-  refreshWindow(){
-    window.location.hash = "";
-    window.location.reload();
   }
 
   render() {

@@ -10,3 +10,9 @@
 .logo{
   height: 30px;
 }
+
+@media (max-width: 767px){
+  .logo{
+    margin: 0 auto;
+  }  
+}
