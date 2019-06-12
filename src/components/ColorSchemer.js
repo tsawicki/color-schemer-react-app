@@ -29,6 +29,7 @@ class ColorSchemer extends Component {
       colorPalette = PaletteGenerator.getRandomColorPalette(colorsNumber);
     }
     this.state = {colorsNumber: colorsNumber, colorPalette: colorPalette};
+
   }
   
   setRandomPallete = () => this.setState({ colorPalette: PaletteGenerator.getRandomColorPalette(this.state.colorsNumber)})

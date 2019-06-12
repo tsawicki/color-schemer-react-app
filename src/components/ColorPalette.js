@@ -10,8 +10,8 @@ class ColorPalette extends Component {
       <div className="colorPalette">
         {this.props.colorPalette.map((colorBlock, index) => {
           return (
-            <CSSTransition in={true} appear={true} timeout={500+(delay_jump*index)} classNames="fade" key={index}>
-              <ColorBlock color={colorBlock} key={index} delay={delay_jump*index}/>
+            <CSSTransition in={true} appear={true} timeout={500+(delay_jump*index)} classNames="fade" key={colorBlock}>
+              <ColorBlock color={colorBlock} key={colorBlock} delay={delay_jump*index}/>
             </CSSTransition>
           )
         })}
