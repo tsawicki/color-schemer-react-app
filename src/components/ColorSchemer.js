@@ -2,49 +2,37 @@ import React, { Component } from "react";
 import ColorPalette from "./ColorPalette";
 import Header from "./Header";
 import Footer from "./Footer";
-import PaletteGenerator from "../utils/paletteGenerator";
+import PaletteGenerator from "../utils/PaletteGenerator";
+import URLHashDecoder from "../utils/URLHashDecoder";
 import './css/ColorSchemer.css';
+
 
 class ColorSchemer extends Component {
 
   constructor(props) {
     super(props);
 
-    let colorsList;
+    let colorPalette;
     let colorsNumber;
 
-    // TODO: check if hash is valid hex list...
-    if(window.location.hash){
-      colorsList = this.loadPalleteFromURL();
-      colorsNumber = colorsList.length;
+    if(URLHashDecoder.hasValidHash()){
+      colorPalette = URLHashDecoder.loadPalleteFromURL();
+      colorsNumber = colorPalette.length;
     }else{
       colorsNumber = localStorage.getItem("colorsNumber") || 5
-      colorsList = this.getRandomPallete(colorsNumber);
+      colorPalette = PaletteGenerator.getRandomColorPalette(colorsNumber);
     }
-    this.state = {colorsNumber: colorsNumber, colorsList: colorsList};
+    this.state = {colorsNumber: colorsNumber, colorPalette: colorPalette};
   }
   
-  getRandomPallete = (colorsNumber) => {
-    const paletteGenerator = new PaletteGenerator();
-    const colorsList = paletteGenerator.getRandomColorPalette(colorsNumber)
-    return colorsList;
-  }
-
-  setRandomPallete = () => this.setState({ colorsList: this.getRandomPallete(this.state.colorsNumber)})
-
-  loadPalleteFromURL = () => {
-    let colorsList = window.location.hash.replace(/#/g, '').split("-").map((e)=>{return "#" + e.toUpperCase()});
-    return colorsList;
-  }
-
-  savePalleteToURL = () => window.location.hash = this.state.colorsList.reduce((urlHash, color) => (urlHash + "-" + color).toUpperCase());
+  setRandomPallete = () => this.setState({ colorPalette: PaletteGenerator.getRandomColorPalette(this.state.colorsNumber)})
 
   render() {
-    this.savePalleteToURL();
+    URLHashDecoder.savePalleteToURL(this.state.colorPalette);
     return (
       <div id="ColorSchemer">
         <Header/>
-        <ColorPalette colorsList={this.state.colorsList} />
+        <ColorPalette colorPalette={this.state.colorPalette} />
         <Footer setRandomPalleteBtnClick={this.setRandomPallete}/>
       </div>
     );
