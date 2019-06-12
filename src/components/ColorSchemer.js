@@ -6,11 +6,17 @@ import PaletteGenerator from "../utils/PaletteGenerator";
 import URLHashDecoder from "../utils/URLHashDecoder";
 import './css/ColorSchemer.css';
 
-
 class ColorSchemer extends Component {
 
   constructor(props) {
+
     super(props);
+
+    document.body.onkeyup = (e) => {
+      if(e.keyCode === 32){
+        this.setRandomPallete();
+      }
+    }   
 
     let colorPalette;
     let colorsNumber;

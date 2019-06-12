@@ -4,7 +4,6 @@ import ColorBlock from "./ColorBlock";
 import './css/ColorPalette.css';
 
 class ColorPalette extends Component {
-
   render() {
     var delay_jump = 100;
     return (
