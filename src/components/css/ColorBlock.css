@@ -13,26 +13,19 @@
   font-size: 12px;
 }
 
-.fade-appear{
-  transform: translateY(30px);
+.fade-appear,
+.fade-enter{
   opacity: 0.01;
 }
 
-.fade-appear-active{
+.fade-appear-active,
+.fade-enter-active{
   opacity: 1;
-  transform: translateY(0px);
   transition: all 100ms linear;
 }
 
 @media (max-width: 767px){
   .colorblock{
     align-items: center;
-  }
-    .fade-appear{
-    transform: translateX(-30px);
-  }
-
-  .fade-appear-active{
-    transform: translateX(0px);
   }
 }
